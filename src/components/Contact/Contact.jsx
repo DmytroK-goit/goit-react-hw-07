@@ -1,21 +1,21 @@
 import s from "./Contact.module.css";
 import { IoPeopleSharp } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
-import { deleteContact } from "../../redux/contactsSlice";
 import { useDispatch } from "react-redux";
+import { deleteContact } from "../../redux/contactsOps";
 
-const Contact = ({ data }) => {
+const Contact = ({ contact }) => {
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContact(data.id));
+  const handleDelete = () => dispatch(deleteContact(contact));
 
   return (
-    <div className={s.contact} key={data.id}>
+    <div className={s.contact} key={contact.id}>
       <div>
         <p>
-          <IoPeopleSharp /> {data.name}
+          <IoPeopleSharp /> {contact.name}
         </p>
         <p>
-          <FaPhoneAlt /> {data.number}
+          <FaPhoneAlt /> {contact.number}
         </p>
       </div>
       <button type="button" onClick={handleDelete}>
