@@ -8,10 +8,6 @@ const SearchBox = () => {
   const dispatch = useDispatch();
   const name = useSelector(selectNameFilter);
 
-  // const handleChange = (event) => {
-  //   dispatch(changeFilter(event.target.value));
-  // };
-
   return (
     <div>
       <form className={s.form}>
