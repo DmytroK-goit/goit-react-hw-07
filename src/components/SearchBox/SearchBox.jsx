@@ -8,9 +8,9 @@ const SearchBox = () => {
   const dispatch = useDispatch();
   const name = useSelector(selectNameFilter);
 
-  const handleChange = (event) => {
-    dispatch(changeFilter(event.target.value));
-  };
+  // const handleChange = (event) => {
+  //   dispatch(changeFilter(event.target.value));
+  // };
 
   return (
     <div>
@@ -21,7 +21,7 @@ const SearchBox = () => {
             type="text"
             id={searchId}
             value={name}
-            onChange={handleChange}
+            onChange={(e) => dispatch(changeFilter(e.target.value))}
             placeholder="Enter search name"
           />
         </label>
