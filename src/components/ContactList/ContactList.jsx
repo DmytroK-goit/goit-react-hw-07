@@ -1,8 +1,10 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Contact from "../Contact/Contact";
 import s from "./ContactList.module.css";
 import { selectContacts } from "../../redux/contactsSlice";
 import { selectNameFilter } from "../../redux/filtersSlice";
+import { useEffect } from "react";
+import { fetchContacts } from "../../redux/contactsOps";
 
 const getVisibleContacts = ({ contacts, name }) => {
   if (!name) return contacts;
@@ -17,6 +19,10 @@ const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const name = useSelector(selectNameFilter);
   const visibleContacts = getVisibleContacts({ contacts, name }) || [];
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <>
