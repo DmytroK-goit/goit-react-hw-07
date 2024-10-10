@@ -16,7 +16,7 @@ const getVisibleContacts = ({ contacts, name }) => {
 const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const name = useSelector(selectNameFilter);
-  const visibleContacts = getVisibleContacts(contacts, name) || [];
+  const visibleContacts = getVisibleContacts({ contacts, name }) || [];
 
   return (
     <>
