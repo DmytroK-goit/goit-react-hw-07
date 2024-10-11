@@ -49,9 +49,9 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       validationSchema={FeedbackSchema}
     >
-      <Form className={s.form}>
+      <Form className="w-1/3 flex gap-8 flex-col bg-amber-500 p-20 rounded-full">
         <div>
-          <label htmlFor={nameId}>
+          <label className="w-3/4 flex flex-col" htmlFor={nameId}>
             <Field
               type="text"
               name="name"
@@ -62,7 +62,7 @@ const ContactForm = () => {
           </label>
         </div>
         <div>
-          <label htmlFor={phoneId}>
+          <label className="w-3/4 flex flex-col" htmlFor={phoneId}>
             <Field
               type="tel"
               name="number"
@@ -72,7 +72,12 @@ const ContactForm = () => {
             <ErrorMessage name="number" component="span" />
           </label>
         </div>
-        <button type="submit">Add contact</button>
+        <button
+          className="w-1/4 flex border-solid border-2 border-indigo-600 "
+          type="submit"
+        >
+          Add contact
+        </button>
       </Form>
     </Formik>
   );

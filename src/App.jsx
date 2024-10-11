@@ -77,10 +77,10 @@ function App() {
       >
         <MyApp mode={mode} setMode={setMode} />
         <div
-          className="block items-center my-10 rounded-md shadow-1xl h-20 "
+          className="w-auto items-center my-10 rounded-md shadow-1xl h-15"
           style={{ boxShadow: "15px 15px 10px rgb(190, 126, 30)" }}
         >
-          <h1 className="text-5xl font-bold text-black">Phonebook</h1>
+          <h1 className="text-7xl font-bold text-black">Phonebook</h1>
         </div>
 
         <ContactForm />
