@@ -32,7 +32,9 @@ const ContactList = () => {
 
   return (
     <>
-      <h2>Contacts List</h2>
+      <h2 className="text-5xl font-bold text-black shadow-2xl">
+        Contacts List
+      </h2>
       <ul className={s.list}>
         {visibleContacts.map((contact) => (
           <li className={s.li} key={contact.id}>

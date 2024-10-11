@@ -64,20 +64,30 @@ function App() {
       <CssBaseline />
       <Box
         sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
           background: getGradient(mode),
           minHeight: "100vh",
+          minWidth: "100vh",
           padding: "20px",
           textAlign: "center",
-          overflow: "scroll",
+          overflow: "auto",
         }}
       >
         <MyApp mode={mode} setMode={setMode} />
-        <h1>Phonebook</h1>
+        <div
+          className="block items-center my-10 rounded-md shadow-1xl h-20 "
+          style={{ boxShadow: "15px 15px 10px rgb(190, 126, 30)" }}
+        >
+          <h1 className="text-5xl font-bold text-black">Phonebook</h1>
+        </div>
+
         <ContactForm />
         <SearchBox />
         <ContactList />
         {isLoading && <LoadingSpinner />}
-        {isError && <p>{isError}</p>}
+        {isError && <p className="text-2xl font-bold text-black">{isError}</p>}
         <ToastContainer
           position="top-right"
           autoClose={5000}

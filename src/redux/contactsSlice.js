@@ -32,6 +32,7 @@ const slice = createSlice({
         ),
         (state, action) => {
           state.isLoading = true;
+          state.isError = false;
         }
       )
       .addMatcher(
