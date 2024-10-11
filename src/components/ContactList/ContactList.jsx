@@ -1,10 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import Contact from "../Contact/Contact";
 import s from "./ContactList.module.css";
-import { selectContacts } from "../../redux/contactsSlice";
+import {
+  selectContacts,
+  selectIsError,
+  selectIsLoading,
+} from "../../redux/contactsSlice";
 import { selectNameFilter } from "../../redux/filtersSlice";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contactsOps";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const getVisibleContacts = ({ contacts, name }) => {
   if (!name) return contacts;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ContactForm from "./components/ContactForm/ContactForm";
 import SearchBox from "./components/SearchBox/SearchBox";
 import ContactList from "./components/ContactList/ContactList";
@@ -7,6 +7,10 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import { selectIsError, selectIsLoading } from "./redux/contactsSlice";
+import { LoadingSpinner } from "./components/LoadingSpinner/LoadingSpinner";
+import { useSelector } from "react-redux";
+import { toast, ToastContainer } from "react-toastify";
 
 function MyApp({ mode, setMode }) {
   return (
@@ -32,6 +36,8 @@ function MyApp({ mode, setMode }) {
 }
 
 function App() {
+  const isLoading = useSelector(selectIsLoading);
+  const isError = useSelector(selectIsError);
   const [mode, setMode] = useState("light");
   const theme = createTheme({
     palette: {
@@ -41,6 +47,11 @@ function App() {
       },
     },
   });
+  useEffect(() => {
+    if (isError) {
+      toast.error(`Error: ${isError}`);
+    }
+  }, [isError]);
 
   const getGradient = (mode) => {
     return mode === "dark"
@@ -65,6 +76,13 @@ function App() {
         <ContactForm />
         <SearchBox />
         <ContactList />
+        {isLoading && <LoadingSpinner />}
+        {isError && <p>{isError}</p>}
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+        />
       </Box>
     </ThemeProvider>
   );
