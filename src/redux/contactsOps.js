@@ -27,8 +27,13 @@ export const deleteContact = createAsyncThunk(
   async (id, thunkApi) => {
     try {
       const { data } = await axios.delete(`/contacts/${id}`);
+      if (data) {
+        toast.success(`Контакт видалено`);
+      }
+
       return data.id;
     } catch (error) {
+      toast.error(`Error ${error.message}`);
       return thunkApi.rejectWithValue(error.message);
     }
   }
@@ -44,6 +49,7 @@ export const addContact = createAsyncThunk(
       }
       return data;
     } catch (error) {
+      toast.error(`Error ${error.message}`);
       return thunkApi.rejectWithValue(error.message);
     }
   }
