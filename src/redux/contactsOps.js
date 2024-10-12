@@ -10,7 +10,10 @@ export const fetchContacts = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { data } = await axios.get("/contacts");
-      toast.success(`sasdasd`);
+      if (data) {
+        toast.success(`На сервері знайдено ${data.length} контактів`);
+      }
+
       return data;
     } catch (error) {
       toast.error(`Error ${error.message}`);
@@ -36,6 +39,9 @@ export const addContact = createAsyncThunk(
   async (body, thunkApi) => {
     try {
       const { data } = await axios.post("/contacts", body);
+      if (data) {
+        toast.success(`Успішно додано контакт`);
+      }
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);

@@ -49,7 +49,13 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       validationSchema={FeedbackSchema}
     >
-      <Form className="w-1/3 flex gap-8 flex-col bg-amber-500 p-20 rounded-full">
+      <Form
+        className="w-1/4 flex gap-8 flex-col bg-amber-500 p-10 rounded-2xl mb-10"
+        style={{
+          boxShadow: "15px 15px 10px rgb(190, 126, 30)",
+          backgroundColor: " burlywood",
+        }}
+      >
         <div>
           <label className="w-3/4 flex flex-col" htmlFor={nameId}>
             <Field
@@ -73,7 +79,7 @@ const ContactForm = () => {
           </label>
         </div>
         <button
-          className="w-1/4 flex border-solid border-2 border-indigo-600 "
+          className="w-1/3 flex rounded-2xl justify-center text-gray-50 border-black border-solid bg-indigo-700 border-2 border-indigo-600  transition-transform duration-200 hover:scale-110"
           type="submit"
         >
           Add contact
