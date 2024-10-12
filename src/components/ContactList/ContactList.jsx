@@ -25,10 +25,6 @@ const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const name = useSelector(selectNameFilter);
   const visibleContacts = getVisibleContacts({ contacts, name }) || [];
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
 
   return (
     <>

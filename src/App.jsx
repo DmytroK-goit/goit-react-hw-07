@@ -9,8 +9,9 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import { selectIsError, selectIsLoading } from "./redux/contactsSlice";
 import { LoadingSpinner } from "./components/LoadingSpinner/LoadingSpinner";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
+import { fetchContacts } from "./redux/contactsOps";
 
 function MyApp({ mode, setMode }) {
   return (
@@ -36,6 +37,7 @@ function MyApp({ mode, setMode }) {
 }
 
 function App() {
+  const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectIsError);
   const [mode, setMode] = useState("light");
@@ -47,6 +49,10 @@ function App() {
       },
     },
   });
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
   useEffect(() => {
     if (isError) {
       toast.error(`Error: ${isError}`);
