@@ -35,7 +35,7 @@ const ContactList = () => {
       <h2 className="text-5xl font-bold text-black shadow-2xl my-10">
         Contacts List
       </h2>
-      <ul className="grid gap-4 grid-cols-3 ">
+      <ul className="grid gap-4 grid-cols-3 place-items-center">
         {visibleContacts.map((contact) => (
           <li key={contact.id}>
             <Contact contact={contact} />

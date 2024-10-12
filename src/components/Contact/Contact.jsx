@@ -20,7 +20,11 @@ const Contact = ({ contact }) => {
           <FaPhoneAlt /> {number}
         </p>
       </div>
-      <button className="rounded-full p-5" type="button" onClick={handleDelete}>
+      <button
+        className="rounded-full p-5 "
+        type="button"
+        onClick={handleDelete}
+      >
         Delete
       </button>
     </div>

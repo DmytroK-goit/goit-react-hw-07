@@ -49,14 +49,17 @@ const ContactForm = () => {
       validationSchema={FeedbackSchema}
     >
       <Form
-        className="w-1/4 flex gap-8 flex-col bg-amber-500 p-10 rounded-2xl mb-10"
+        className="w-1/4 flex gap-8 flex-col bg-amber-500 p-10 rounded-2xl mb-10 border-solid border-2 border-black"
         style={{
           boxShadow: "15px 15px 10px rgb(190, 126, 30)",
           backgroundColor: " burlywood",
         }}
       >
         <div>
-          <label className="w-3/4 flex flex-col" htmlFor={nameId}>
+          <label
+            className="w-3/4 flex flex-col border-solid border-2 border-black"
+            htmlFor={nameId}
+          >
             <Field
               type="text"
               name="name"
@@ -67,7 +70,10 @@ const ContactForm = () => {
           </label>
         </div>
         <div>
-          <label className="w-3/4 flex flex-col" htmlFor={phoneId}>
+          <label
+            className="w-3/4 flex flex-col border-solid border-2 border-black"
+            htmlFor={phoneId}
+          >
             <Field
               type="tel"
               name="number"
