@@ -1,5 +1,4 @@
 import axios from "axios";
-
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
@@ -13,7 +12,6 @@ export const fetchContacts = createAsyncThunk(
       if (data) {
         toast.success(`На сервері знайдено ${data.length} контактів`);
       }
-
       return data;
     } catch (error) {
       toast.error(`Error ${error.message}`);
@@ -30,7 +28,6 @@ export const deleteContact = createAsyncThunk(
       if (data) {
         toast.success(`Контакт видалено`);
       }
-
       return data.id;
     } catch (error) {
       toast.error(`Error ${error.message}`);

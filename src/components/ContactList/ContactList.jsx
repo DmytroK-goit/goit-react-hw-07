@@ -12,7 +12,6 @@ const ContactList = () => {
       <h2 className="text-5xl font-bold text-black shadow-2xl my-10">
         Contacts List : {contacts.length} contacts.
       </h2>
-
       <ul className="grid gap-4 grid-cols-3 place-items-center">
         {contacts.map((contact) => (
           <li key={contact.id}>
