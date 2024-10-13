@@ -10,7 +10,7 @@ const ContactList = () => {
   return (
     <>
       <h2
-        className="text-xl my-20 shadow-1xl sm:text-4xl md:text-5xl  lg:text-7xl font-bold text-black"
+        className="text-xl my-20 shadow-1xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-black"
         style={{ boxShadow: "15px 15px 10px rgb(190, 126, 30)" }}
       >
         Contacts List : {contacts.length} contacts.

@@ -83,11 +83,11 @@ function App() {
       >
         <MyApp mode={mode} setMode={setMode} />
         <div
-          className="w-auto items-center my-10 rounded-md shadow-xl h-[49px]"
+          className="my-20 shadow-1xl font-bold text-black"
           style={{ boxShadow: "15px 15px 10px rgb(190, 126, 30)" }}
         >
-          <h1 className="text-xl sm:text-4xl md:text-7xl font-bold text-black">
-            Phonebook
+          <h1 className="text-2xl md:text-7xl font-bold text-black">
+            Phone book
           </h1>
         </div>
 
