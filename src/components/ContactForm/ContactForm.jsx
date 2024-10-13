@@ -49,7 +49,7 @@ const ContactForm = () => {
       validationSchema={FeedbackSchema}
     >
       <Form
-        className="w-1/4 flex gap-8 flex-col bg-amber-500 p-10 rounded-2xl mb-10 border-solid border-2 border-black"
+        className="w-full p-5 sm:w-3/4 sm:p-10 md:w-2/3 lg:w-1/3 xl: flex gap-8 flex-col bg-amber-500  rounded-2xl mb-10 border-solid border-2 border-black"
         style={{
           boxShadow: "15px 15px 10px rgb(190, 126, 30)",
           backgroundColor: " burlywood",
@@ -84,7 +84,7 @@ const ContactForm = () => {
           </label>
         </div>
         <button
-          className="w-1/3 flex rounded-2xl justify-center text-gray-50 border-black border-solid bg-indigo-700 border-2 border-indigo-600  transition-transform duration-200 hover:scale-110"
+          className="w-2/3 flex rounded-2xl justify-center text-gray-50 border-black border-solid bg-indigo-700 border-2 border-indigo-600  transition-transform duration-200 hover:scale-110 sm:w-1/3"
           type="submit"
         >
           Add contact

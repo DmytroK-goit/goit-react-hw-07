@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ContactForm from "./components/ContactForm/ContactForm";
 import SearchBox from "./components/SearchBox/SearchBox";
 import ContactList from "./components/ContactList/ContactList";
@@ -86,7 +86,9 @@ function App() {
           className="w-auto items-center my-10 rounded-md shadow-1xl h-15"
           style={{ boxShadow: "15px 15px 10px rgb(190, 126, 30)" }}
         >
-          <h1 className="text-7xl font-bold text-black">Phonebook</h1>
+          <h1 className="text-xl sm:text-4xl md:text-7xl font-bold text-black">
+            Phonebook
+          </h1>
         </div>
 
         <ContactForm />
